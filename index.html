@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>FOR TALIKA</title>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500&family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
+
+  <style>
+    * { box-sizing: border-box; margin:0; padding:0; }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background: linear-gradient(#fff1f6, #ffffff);
+      color: #3f2e2e;
+      scroll-behavior: smooth;
+      overflow-x: hidden;
+    }
+
+    section {
+      min-height: 100vh;
+      padding: 70px 25px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    h1 {
+      font-family: 'Playfair Display', serif;
+      font-weight: 500;
+      font-size: 2.6rem;
+      margin-bottom: 20px;
+      letter-spacing: 1px;
+    }
+
+    h2 {
+      font-family: 'Playfair Display', serif;
+      font-weight: 400;
+      font-size: 1.2rem;
+      margin-bottom: 35px;
+      opacity: 0.8;
+    }
+
+    p {
+      font-size: 1.05rem;
+      line-height: 1.8;
+      max-width: 620px;
+      margin-bottom: 20px;
+    }
+
+    nav {
+      position: fixed;
+      bottom: 18px;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      gap: 14px;
+      z-index: 10;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #6d4c4c;
+      font-size: 0.8rem;
+      background: rgba(255, 255, 255, 0.7);
+      padding: 6px 14px;
+      border-radius: 20px;
+      backdrop-filter: blur(6px);
+      transition: transform 0.2s;
+    }
+
+    nav a:hover {
+      transform: scale(1.1);
+    }
+
+    iframe {
+      margin: 12px 0;
+      border-radius: 12px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 18px;
+      width: 100%;
+      max-width: 900px;
+      margin-top: 30px;
+    }
+
+    .card {
+      background: rgba(255,255,255,0.8);
+      border-radius: 16px;
+      padding: 14px;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+      font-size: 0.95rem;
+      position: relative;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 15px 25px rgba(0,0,0,0.1);
+    }
+
+    .card img {
+      width: 100%;
+      border-radius: 12px;
+      margin-bottom: 10px;
+      min-height: 150px;
+      background: #ffe4e1; /* cute pink placeholder */
+      object-fit: cover;
+    }
+
+    /* Floating hearts */
+    .heart {
+      position: fixed;
+      bottom: -20px;
+      font-size: 18px;
+      animation: floatUp linear infinite;
+      opacity: 0.6;
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    @keyframes floatUp {
+      0% { transform: translateY(0) rotate(0deg); opacity: 0; }
+      50% { opacity: 0.7; }
+      100% { transform: translateY(-120vh) rotate(360deg); opacity: 0; }
+    }
+
+    /* subtle scale animation for headers */
+    h1, h2 {
+      animation: floatText 4s ease-in-out infinite alternate;
+    }
+
+    @keyframes floatText {
+      0% { transform: translateY(0px); }
+      100% { transform: translateY(-6px); }
+    }
+  </style>
+</head>
+<body>
+
+<script>
+  // More floating hearts with random size & speed
+  setInterval(() => {
+    const heart = document.createElement("div");
+    heart.className = "heart";
+    heart.innerHTML = "♡";
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.fontSize = (14 + Math.random() * 14) + "px";
+    heart.style.animationDuration = (5 + Math.random() * 6) + "s";
+    document.body.appendChild(heart);
+    setTimeout(() => heart.remove(), 11000);
+  }, 400);
+</script>
+
+<nav>
+  <a href="#home">HOME</a>
+  <a href="#songs">SONGS</a>
+  <a href="#time">TIME</a>
+  <a href="#you">YOU</a>
+</nav>
+
+<!-- HOME -->
+<section id="home">
+  <h1>HI BABY</h1>
+  <p>
+    I MADE THIS FOR YOU (with lots of help coz im dumb hehe).<br>
+    JUST SOMETHING SOFT THAT HOLDS HOW I FEEL.
+  </p>
+</section>
+
+<!-- SONGS -->
+<section id="songs">
+  <h1>SONGS</h1>
+  <h2>SONGS THAT REMIND ME OF YOU</h2>
+
+  <iframe src="https://open.spotify.com/embed/track/3W7KHojYGgYaoX9ogKO9hU" width="300" height="80"></iframe> <!-- Sweet -->
+  <iframe src="https://open.spotify.com/embed/track/21IYMdzTrzSe191Cy5eMap" width="300" height="80"></iframe> <!-- Apocalypse -->
+  <iframe src="https://open.spotify.com/embed/track/2vlkTkPqdATznKHu9gD2c1" width="300" height="80"></iframe> <!-- Sailor Song -->
+  <iframe src="https://open.spotify.com/embed/track/1oAwsWBovWRIp7qLMGPIet" width="300" height="80"></iframe> <!-- Lana -->
+  <iframe src="https://open.spotify.com/embed/track/7kvLAPEnEPlSbhZDlHFv0p" width="300" height="80"></iframe> <!-- Javed Ali -->
+  <iframe src="https://open.spotify.com/embed/track/6G9YlbU3ByPJQvOFDRdwyM" width="300" height="80"></iframe> <!-- Yungkai -->
+
+  <p style="margin-top:30px; opacity:0.7;">
+    THESE ARE THE SONGS I’D PLAY<br>
+    WHEN I MISS YOU A LITTLE TOO MUCH
+  </p>
+</section>
+
+<!-- TIME -->
+<section id="time">
+  <h1>TIME</h1>
+  <h2>THIS IS EVERYTHING I WANT TO DO WITH YOU</h2>
+
+  <div class="grid">
+    <div class="card">
+      <img src="https://i.pinimg.com/1200x/58/91/b0/5891b0dbd54afe238a6dcbad41f631b4.jpg">
+      STARGAZING DATE<br>
+    </div>
+    <div class="card">
+      <img src="https://i.pinimg.com/736x/c0/0f/e1/c00fe1386f5161829c31d8c81b403fad.jpg">
+      ARCADE DATE<br>
+    </div>
+    <div class="card">
+      <img src="https://i.pinimg.com/1200x/60/7b/30/607b30f42a95f9446f26ccdf18c7b442.jpg">
+      LEGO DATE<br>
+    </div>
+    <div class="card">
+      <img src="https://i.pinimg.com/1200x/69/54/c9/6954c93fd75f0cf567c772a5ea7c13fa.jpg">
+      COOKING DATE<br>
+    </div>
+    <div class="card">
+      <img src="https://i.pinimg.com/736x/5d/06/56/5d06566cdaa4e6a90c631af2d96fc6e0.jpg">
+      MOVIE DATE<br>
+    </div>
+    <div class="card">
+      <img src="https://i.pinimg.com/736x/6d/14/f9/6d14f902458f7dd2b15b031b34ee9c14.jpg">
+      CUDDLING FOR HOURS<br>JUST BEING NEXT TO YOU.
+    </div>
+    <div class="card">
+      <img src="https://i.pinimg.com/736x/6d/d2/98/6dd2981506a7ca42064b3590b2f7a1a1.jpg">
+      CAMPING DATE<br>.
+    </div>
+    <div class="card">
+      <img src="https://i.pinimg.com/736x/fa/0d/d6/fa0dd6e27995c38762928618a4e33354.jpg">
+      BAKING TOGETHER<br>
+    </div>
+    <div class="card">
+      <img src="https://i.pinimg.com/736x/8c/1c/f1/8c1cf12f5cb59ace64ef53c9901eb46e.jpg">
+      PICNIC DATE<br>
+    </div>
+    <div class="card">
+      <img src="https://i.pinimg.com/1200x/a9/d3/17/a9d317a6fe2b99c62b6fa4b1d8744916.jpg">
+      LONG WALKS<br>
+    </div>
+  </div>
+</section>
+
+<!-- YOU -->
+<section id="you">
+  <h1>YOU</h1>
+  <p>
+    YOU MAKE THINGS FEEL LIGHTER.<br>
+    EVEN ON DAYS I DON’T SAY MUCH.<br>
+    AND I LOVE WHO I AM AROUND YOU.
+  </p>
+
+  <p style="opacity:0.7;">
+    HAPPY VALENTINE’S DAY<br>
+    ALWAYS YOURS
+    ~NIKASHHSHSH
+  </p>
+</section>
+<!-- Cute beats audio -->
+<audio id="cuteBeat" src="https://github.com/Aaramsebro/song/raw/refs/heads/main/mixkit-classical-10-717.mp3" autoplay loop></audio>
+
+<script>
+  const beat = document.getElementById('cuteBeat');
+  const iframes = document.querySelectorAll('#songs iframe');
+
+  // Pause beat when any song iframe is clicked
+  iframes.forEach(iframe => {
+    iframe.addEventListener('load', () => {
+      // Detect clicks inside iframe using a workaround
+      // Since we can't access iframe content for Spotify, we'll pause on mousedown
+      iframe.addEventListener('mousedown', () => {
+        beat.pause();
+      });
+    });
+  });
+
+  // Optional: Resume beat when user scrolls away from songs
+  window.addEventListener('scroll', () => {
+    const songsSection = document.getElementById('songs');
+    const rect = songsSection.getBoundingClientRect();
+    if(rect.bottom < 0 || rect.top > window.innerHeight){
+      if(beat.paused) beat.play();
+    }
+  });
+</script>
+
+
+</body>
+</html>
