@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>For My Psyduck 💛</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&family=Pacifico&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(#fff7fb, #fdeff5);
+      font-family: 'Quicksand', sans-serif;
+      overflow: hidden;
+    }
+
+    h1 {
+      text-align: center;
+      margin-top: 20px;
+      font-family: 'Pacifico', cursive;
+      font-size: 2.4rem;
+      color: #ff7aa2;
+    }
+
+    .container {
+      position: relative;
+      width: 100%;
+      height: calc(100vh - 100px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .psyduck {
+      width: 280px;
+      z-index: 2;
+    }
+
+    .cloud {
+      position: absolute;
+      background: white;
+      padding: 14px 18px;
+      border-radius: 30px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+      cursor: pointer;
+      font-size: 0.95rem;
+      text-align: center;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      max-width: 180px;
+    }
+
+    .cloud:hover {
+      transform: scale(1.05);
+      box-shadow: 0 14px 30px rgba(0,0,0,0.12);
+    }
+
+    /* CLOUD POSITIONS */
+    .c1 { top: 12%; left: 20%; }
+    .c2 { top: 18%; right: 22%; }
+    .c3 { top: 40%; left: 10%; }
+    .c4 { top: 45%; right: 10%; }
+    .c5 { bottom: 12%; left: 35%; }
+    .c6 { top: 40%; left: 28%; }
+    .c7 { top: 38%; right: 30%; }
+    .c8 { bottom: 28%; right: 25%; }
+    .c9 { bottom: 22%; left: 18%; }
+    .c10 { top: 70%; right: 40%; }
+
+    /* MODAL */
+    .overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.45);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 10;
+    }
+
+    .modal {
+      background: white;
+      padding: 30px;
+      border-radius: 25px;
+      max-width: 420px;
+      text-align: center;
+      font-size: 1.05rem;
+      line-height: 1.6;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+      animation: pop 0.3s ease;
+    }
+
+    @keyframes pop {
+      from { transform: scale(0.9); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
+
+    .close {
+      margin-top: 20px;
+      display: inline-block;
+      padding: 8px 18px;
+      background: #ff7aa2;
+      color: white;
+      border-radius: 20px;
+      cursor: pointer;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+
+<body>
+
+  <h1>Inside Psyduck’s Head ☁️</h1>
+
+  <div class="container">
+    <!-- CENTER IMAGE -->
+    <img
+      class="psyduck"
+      src="https://i.pinimg.com/736x/55/b9/a5/55b9a59dcd46028d51bae951d4061abd.jpg"
+      alt="Psyduck"
+    />
+
+    <!-- CLOUDS -->
+    <div class="cloud c1" onclick="openThought(0)">am i enough</div>
+    <div class="cloud c2" onclick="openThought(1)">why do i feel like this</div>
+    <div class="cloud c3" onclick="openThought(2)">what if i mess up</div>
+    <div class="cloud c4" onclick="openThought(3)">why am i so tired</div>
+    <div class="cloud c5" onclick="openThought(4)">am i doing enough</div>
+
+    <div class="cloud c6" onclick="openThought(5)">what if i’m too much</div>
+    <div class="cloud c7" onclick="openThought(6)">why do i overthink</div>
+    <div class="cloud c8" onclick="openThought(7)">will this feeling pass</div>
+    <div class="cloud c9" onclick="openThought(8)">am i allowed to rest</div>
+    <div class="cloud c10" onclick="openThought(9)">what if i disappoint you</div>
+  </div>
+
+  <!-- MODAL -->
+  <div class="overlay" id="overlay" onclick="closeThought()">
+    <div class="modal" onclick="event.stopPropagation()">
+      <div id="thoughtText"></div>
+      <div class="close" onclick="closeThought()">okay 💛</div>
+    </div>
+  </div>
+
+  <script>
+    const thoughts = [
+      "You are enough. Even when you don’t feel shiny or loud or confident. Just existing as you are is already enough.",
+      "Sometimes feelings don’t need reasons. You’re allowed to feel without having to explain yourself.",
+      "You won’t mess things up by being human. And even if something goes wrong, it doesn’t make you wrong.",
+      "You’re tired because you’ve been trying. That matters more than pretending you’re okay.",
+      "You are already enough. On your tired days. On your quiet days. On your confused days. Especially then.",
+      "You’re not too much. You’re just feeling deeply, and that’s something soft, not something wrong.",
+      "Overthinking is just your mind trying to protect you. You don’t need to punish yourself for caring.",
+      "Yes. This feeling will pass. And until it does, you don’t have to face it alone.",
+      "Rest is not a reward. You don’t have to earn it. You’re allowed to pause just because you exist.",
+      "You could never disappoint me by being honest about how you feel. I want all of you, not just the easy parts."
+    ];
+
+    function openThought(index) {
+      document.getElementById("thoughtText").innerText = thoughts[index];
+      document.getElementById("overlay").style.display = "flex";
+    }
+
+    function closeThought() {
+      document.getElementById("overlay").style.display = "none";
+    }
+  </script>
+
+</body>
+</html>
